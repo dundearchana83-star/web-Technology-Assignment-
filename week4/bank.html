@@ -1,0 +1,56 @@
+<html>
+    <bod>
+        <style>
+            input[type=text]{
+                width:100%;
+                border:2px;
+                background-color:red;
+                padding:20px;
+                margin:10px;
+                font-size:10px;
+            }
+            input[type=number]{
+                width:100%;
+                border:2px;
+                background-color:brown;
+                padding:20px;
+                margin:10px;
+                font-size:10px;
+            }
+            input[type=Button]{
+                border:2px;
+                background-color:green;
+                padding:20px;
+                margin:10px;
+                font-size:10px;
+            }
+            h3{
+                text-align:center;
+        
+            }
+            
+
+        </style>
+        <h3>SBI EMI CALUCLATION</h3>
+        <form>
+            Name<input type="text" placeholder="enter the name">
+            occupation<input type="text" placeholder="enter the occupation">  
+            loan amount<input type="number" id="A" placeholder="enter the amount"> 
+            intrest rate<input type="number"  id="B" placeholder="enter the intrest">
+            tensurein year<input type="number" id="C" placeholder="enter the year">  
+            <input type="button" value="calc emi" onclick="calculae()">
+
+        </form>
+        <p id="result"></p>
+        <script>
+            function  calculae(){
+                var amount=document.getElementById("A").value;
+                var intrest=document.getElementById("B").value;
+                var tenure=document.getElementById("C").value;
+                var mir=(intrest/12)*100;
+                var emi=amount*mir*Math.pow(1+mir,tenure)-1;
+                document.getElementById("result").innerText="your emi is:" +emi.toFixed(2);
+            }
+        </script>
+    </bod>
+</html>
